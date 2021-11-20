@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity">
+
+    <TextView
+        android:id="@+id/tvPricePerCourt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="@string/txt_price_per_unit"
+        app:layout_constraintBottom_toTopOf="@+id/tvCourts"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tvCourts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="@string/courts"
+        app:layout_constraintBottom_toTopOf="@+id/tvPlayers"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/tvPricePerCourt" />
+
+    <TextView
+        android:id="@+id/tvPlayers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/players"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/tvCourts" />
+
+    <Button
+        android:id="@+id/buttonOK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="@string/bt_ok"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPlayers"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPlayers" />
+
+    <EditText
+        android:id="@+id/editTextPricePerCourt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:text="@string/to_pay"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvPricePerCourt"
+        app:layout_constraintStart_toStartOf="@+id/barrier2"
+        android:autofillHints="preis-je-platz" />
+
+    <EditText
+        android:id="@+id/editTextCourts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:text="@string/et_courts"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvCourts"
+        app:layout_constraintStart_toStartOf="@+id/barrier2" />
+
+    <EditText
+        android:id="@+id/editTextPlayers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:text="@string/et_players"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvPlayers"
+        app:layout_constraintStart_toStartOf="@+id/barrier2" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="tvCourts,tvPricePerCourt,tvPlayers"
+        tools:layout_editor_absoluteX="109dp"
+        tools:layout_editor_absoluteY="79dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="26dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/spielerPlus"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="@string/btn_plus"
+        app:layout_constraintBaseline_toBaselineOf="@+id/spielerEingabe"
+        app:layout_constraintStart_toStartOf="@+id/plaetzePlus" />
+
+    <Button
+        android:id="@+id/spielerMinus"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="@string/btn_minus"
+        app:layout_constraintBaseline_toBaselineOf="@+id/spielerPlus"
+        app:layout_constraintStart_toStartOf="@+id/plaetzeMinus" />
+
+    <TextView
+        android:id="@+id/plaetze"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="@string/courts"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/betrag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/to_pay"
+        app:layout_constraintStart_toStartOf="@+id/spieler"
+        app:layout_constraintTop_toBottomOf="@+id/spieler" />
+
+    <EditText
+        android:id="@+id/plaetzeEingabe"
+        android:layout_width="123dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="15dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/et_courts"
+        app:layout_constraintBaseline_toBaselineOf="@+id/plaetze"
+        app:layout_constraintStart_toEndOf="@+id/barrier3" />
+
+    <EditText
+        android:id="@+id/spielerEingabe"
+        android:layout_width="123dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/et_players"
+        app:layout_constraintBaseline_toBaselineOf="@+id/spieler"
+        app:layout_constraintStart_toStartOf="@+id/plaetzeEingabe" />
+
+    <TextView
+        android:id="@+id/spieler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/txt_players"
+
+        app:layout_constraintStart_toStartOf="@+id/plaetze"
+        app:layout_constraintTop_toBottomOf="@+id/plaetze" />
+
+    <Button
+        android:id="@+id/plaetzePlus"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:text="@string/btn_plus"
+        app:layout_constraintBaseline_toBaselineOf="@+id/plaetzeEingabe"
+        app:layout_constraintStart_toEndOf="@+id/plaetzeEingabe" />
+
+    <Button
+        android:id="@+id/plaetzeMinus"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:text="@string/btn_minus"
+        app:layout_constraintBaseline_toBaselineOf="@+id/plaetzePlus"
+        app:layout_constraintStart_toEndOf="@+id/plaetzePlus" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="plaetze,betrag,spieler"
+        tools:layout_editor_absoluteX="411dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="59dp" />
+
+    <TextView
+        android:id="@+id/betragErgebnis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBaseline_toBaselineOf="@+id/betrag"
+        app:layout_constraintStart_toStartOf="@+id/spielerPlus" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
